@@ -1,15 +1,9 @@
-# Global
-*.DS_Store
-Desktop.ini
-Thumbs.db
+# project
+_site
+.sass-cache
+.vagrant
 
-# Project
-!.keep
-*.sass-cache
-/_assets/yarn/
-/_site/
-/.jekyll-cache/
-Gemfile.lock
-package-lock.json
-yarn.lock
-.idea
+# general
+.DS_Store
+Thumbs.db
+ehthumbs.db
