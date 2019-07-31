@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 创建个人博客！
-image: /img/happy-icon.png
+title: NDN-Lite-BLE操作参考指南
 tags: [ndn, BLE, Android, nRF52840]
+comments: true
 ---
 
 <h1>NDN-Lite-BLE操作参考指南</h1>
