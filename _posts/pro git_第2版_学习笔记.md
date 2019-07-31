@@ -1,0 +1,149 @@
+---
+layout: post
+title: Pro git 学习笔记
+tags: [阅读笔记, git]
+---
+
+<p align="center"><font size = 5>Pro git 学习笔记</font></p>
+
+<!-- TOC -->
+
+- [1. git工作流程](#1-git工作流程)
+- [2. git基础](#2-git基础)
+    - [2.1. 初始化git仓库](#21-初始化git仓库)
+    - [2.2. clone远程仓库](#22-clone远程仓库)
+    - [2.3. 查看仓库的状态](#23-查看仓库的状态)
+    - [2.4. 跟踪新的文件](#24-跟踪新的文件)
+    - [2.5. 修改暂存状态的文件](#25-修改暂存状态的文件)
+    - [2.6. 查看简单的状态](#26-查看简单的状态)
+    - [2.7. git忽略文件(.gitignore文件)](#27-git忽略文件gitignore文件)
+    - [2.8. 比较文件的差别](#28-比较文件的差别)
+    - [2.9. 移除文件](#29-移除文件)
+
+<!-- /TOC -->
+
+
+# 1. git工作流程
+
+1. 在工作目录中修改文件（modified）。
+2. 暂存文件，将文件的快照放入暂存区域。
+3. 提交更新，找到咱村区域的文件，将快照永久的存储到git仓库目录。
+   ![git工作流程]()
+
+# 2. git基础
+
+## 2.1. 初始化git仓库
+```
+git init
+```
+
+## 2.2. clone远程仓库
+```
+git clone https://github.com/libgit2/libgit2
+```
+如果需要重命名文件名称的话，就在末尾加上自己的文件夹名称，如：
+```
+git clone https://github.com/libgit2/gitlib2 myProject
+```
+
+## 2.3. 查看仓库的状态
+```
+$ git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+新建一个文件，在查看一下仓库的状态有什么变化：
+```
+$ echo 'MyProject' > README
+
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+> 这里提示了readme.md文件没有被跟踪，也就是说readme文件之前没有添加到git快照里面过。
+
+## 2.4. 跟踪新的文件
+使用`git add`开始跟踪一个文件。
+```
+$ git add README
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README
+
+```
+> 此时的readme.md文件也就是处在已暂存状态。
+
+## 2.5. 修改暂存状态的文件
+修改Author文件之后，然后`git status`状态查看一下。
+```
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   AUTHORS
+```
+> 可以看到当修改了已经可以被跟踪的readme文件之后，会显示修改之后的文件还未提交到暂存区，这时就需要使用`git add <文件名>`将文件添加到暂存区。
+```
+$ git add AUTHORS
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   AUTHORS
+        new file:   README
+```
+
+## 2.6. 查看简单的状态
+使用`git status -s`可以得到更为紧凑的格式输出。
+```
+$ git status -s
+ M README
+MM Rakefile
+A lib/git.rb
+M lib/simplegit.rb
+?? LICENSE.txt
+```
+> M在右边：表示修改了但是还未添加到暂存区。M在左边：表示修改了并放入了暂存区，还未commit。A表示：新添加到暂存区。??表示：还没有添加到git快照中，也就是不会被跟踪的文件。
+
+## 2.7. git忽略文件(.gitignore文件)
+创建gitignore文件：
+```
+touch .gitignore
+```
+## 2.8. 比较文件的差别
+使用`git diff`。
+
+## 2.9. 移除文件
+使用`git rm <文件名>`。
+> 这里移除的文件一定要先commit之后才能移除掉。
