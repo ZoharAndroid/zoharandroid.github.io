@@ -21,6 +21,7 @@ description: Android开发者|努力编程的羊
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Tags: "https://zoharandroid.github.io/tags/"
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
