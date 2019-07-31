@@ -1,38 +1,37 @@
-# ----------- CONFIGURABLE START -----------
-title:            "ZhangZhiHong|Android开发者"
-description:      "Android开发者|欢迎来到 ZhangZhiHong 的Web。"
-url:              https://zoharandroid.github.io # 域名
-signoff:          "ZhangZhiHong" # Your name
-facebook_appid:   #liberxue
-google_analytics: UA-101222464-1
-share:            true 
-# 分页
-paginate: 15
-paginate_path: "liberxuepage:num"
-gems: [jekyll-paginate]
-links:
-  - name:         首页
-    url:          /
-    external:     false
-  - name:         书籍
-    url:          /book
-    external:     false
-  - name:         旅游
-    url:          /road
-    external:     false
-  - name:         归档
-    url:          /archives
-    external:     false
-  - name:         标签
-    url:          /tags
-    external:     false
-  - name:         关于
-    url:          /about
-    external:     false
-# ------------ CONFIGURABLE END ------------
+permalink: /blog/:year/:month/:title.html 
+include: ['.htaccess']
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
+markdown: kramdown
+highlights: pygments
+url: 
+cdn_url: 7u2t01.com1.z0.glb.clouddn.com
+lsi: false
+safe: true
+timezone: Asia/Shanghai
+auto: false 
 
-#permalink:        /:categories/:title.html
-permalink: /:year/:month/:day/:title.html
-defaults:
-  - values:
-      layout: "default"
+paginate: 8
+paginate_path: "page:num"
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+JB :
+  IMAGE_PATH : https://zoharandroid.github.io/images
+
+# presonal config
+domain: https://zoharandroid.github.io
+title: ZhangZhihong
+description: 一个慢慢前行的Android开发者
+author: ZhangZhihong
+email: 1048132071@qq.com
+github: ZhangZhihong
+
+config:
+  js_dir:
+  img_dir:
+  css_dir:
