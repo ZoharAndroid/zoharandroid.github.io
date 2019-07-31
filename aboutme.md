@@ -1,16 +1,18 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: 努力奔跑的羊！
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+我的名字叫**张芝宏**，湖南人。硕士毕业于**湖南大学 - 信息科学与工程学院**。
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+热爱生活，热爱编程，喜欢Android，喜欢Java，Kotlin，Python和C编程语言，但是常用的还是Java语言。平时喜欢看书、看电影，喜欢搜索和捣鼓各种软件或插件，将软件定制化自己习惯的方式或者界面。
 
-What else do you need?
+曾经对计算机一无所知，到现在略知一二，其中的艰辛也是每个计算机人员必须要走过的路。每每看到大佬们手指在键盘上飞舞敲击着键盘，优雅的代码随之而出时；每每看到体验丝滑顺畅，界面赏心悦目的APP时；每每看到优秀的代码，巧妙化解问题时。等等这些时刻，也就是在提醒着自己与别人之间的差距还有多少。未来的路还很长，新的技术和方法也不断喷涌出来，很庆幸自己还能够有如此兴趣和动力。
 
-### my history
+也希望能够结识到更多的朋友，一起进步！
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+咩！
+<p align = "center">
+<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-07/icon-header.jpg?raw=true" width = 50px heigh = "50px">
+</p>
