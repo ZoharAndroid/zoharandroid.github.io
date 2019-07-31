@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: 努力奔跑的羊！
+subtitle: 张芝宏，努力奔跑的羊！
 ---
 
 我的名字叫**张芝宏**，湖南人。硕士毕业于**湖南大学 - 信息科学与工程学院**。
@@ -13,6 +13,5 @@ subtitle: 努力奔跑的羊！
 也希望能够结识到更多的朋友，一起进步！
 
 咩！
-<p align = "center">
-<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-07/icon-header.jpg?raw=true" width = 50px heigh = "50px">
-</p>
+![Crepe](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-07/%E7%BE%8A.png?raw=true){: .center-block :}
+
