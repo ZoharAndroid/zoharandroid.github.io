@@ -1,8 +1,8 @@
 # ----------- CONFIGURABLE START -----------
-title:            "ZhangZhiHong|FullStack|独立开发者|jekyll blog|GitHub blog"
-description:      "Full Stack独立开发者|欢迎来到 ZhangZhiHong「角落」侃侃理想、谈谈人生、敲敲代码。"
+title:            "ZhangZhiHong|Android开发者"
+description:      "Android开发者|欢迎来到 ZhangZhiHong 的Web。"
 url:              https://zoharandroid.github.io # 域名
-signoff:          "Zohar.Zzh" # Your name
+signoff:          "ZhangZhiHong" # Your name
 facebook_appid:   #liberxue
 google_analytics: UA-101222464-1
 share:            true 
