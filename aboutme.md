@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: 关于我
 subtitle: 张芝宏，努力奔跑的羊！
 ---
 
