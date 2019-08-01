@@ -20,17 +20,16 @@ description: Android开发者|努力编程的羊
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
+  Home: "http://zoharandroid.github.io"
   Tags: "https://zoharandroid.github.io/tags/"
   Projecets:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
-  Home: "http://zoharandroid.github.io"
+  About Me: "aboutme"
   Search: "search"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/icon-header.jpg"
+avatar: "/img/avatar_round.jpg"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
