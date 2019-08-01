@@ -2,7 +2,7 @@
 layout: post
 title: NDN-Lite-BLE操作参考指南
 tags: [ndn, BLE, Android, nRF52840]
-comments: true
+categories: NDN
 ---
 
 <h1>NDN-Lite-BLE操作参考指南</h1>
