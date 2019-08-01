@@ -7,7 +7,7 @@ This blog uses [google search](http://google.com/cse).
 
 <script>
   (function() {
-    var cx = '005036231896853323962:4xmqe7fiq7q';
+    var cx = '011878859869123072180:33a1lk7bbuy';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
@@ -17,3 +17,6 @@ This blog uses [google search](http://google.com/cse).
   })();
 </script>
 <gcse:search></gcse:search>
+
+<script async src="https://cse.google.com/cse.js?cx=011878859869123072180:33a1lk7bbuy"></script>
+<div class="gcse-search"></div>
