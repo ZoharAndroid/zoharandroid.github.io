@@ -21,7 +21,7 @@ description: Android开发者|努力编程的羊
 # List of links in the navigation bar
 navbar-links:
   Home: "http://zoharandroid.github.io"
-  博客分类: "https://zoharandroid.github.io/tags/"
+  类别: "https://zoharandroid.github.io/tags/"
   项目:
     - Learn markdown: "http://www.markdowntutorial.com/"
   关于我: "aboutme"
