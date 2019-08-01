@@ -16,5 +16,5 @@ This blog uses [google search](http://google.com/cse).
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-gcse:search</gcse:search>
+<gcse:search>x</gcse:search>
 
