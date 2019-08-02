@@ -4,10 +4,6 @@
 
 
 {% if page.bigimg %}
-	<!-- 地址栏显示 -->
-	<link rel="Shortcut Icon" href="./favicon.ico"  type="image/x-icon" />
-	<!-- 收藏栏也显示 -->	
-	<link rel="Bookmark" href="./favicon.ico" type="image/x-icon" />
 
   <div id="header-big-imgs" data-num-img={% if page.bigimg.first %}{{ page.bigimg.size }}{% else %}1{% endif %}
     {% for bigimg in page.bigimg %}
@@ -25,10 +21,6 @@
 {% endif %}
 
 <header class="header-section {% if page.bigimg %}has-img{% endif %}">
-<!-- 地址栏显示 -->
-	<link rel="Shortcut Icon" href="./favicon.ico"  type="image/x-icon" />
-	<!-- 收藏栏也显示 -->	
-	<link rel="Bookmark" href="./favicon.ico" type="image/x-icon" />
 	
 {% if page.bigimg %}
 <div class="big-img intro-header">
