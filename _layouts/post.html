@@ -50,7 +50,7 @@ layout: base
       {% endif %}
 
 	<!--添加分类-->
-	 {% if post.categories.size > 0 }
+	 {% if post.categories.size > 0 %}
 		  <div class="post-categories">
 		  Category：
 		{% if post %}
@@ -63,7 +63,7 @@ layout: base
 			{% unless forloop.last %}&nbsp;{% endunless %}
 			{% endfor %}
 		</div>
-	{ %endif %}
+	{% endif %}
 
 	  <!--文章尾部的社交平台分享-->
       {% if page.social-share %}
