@@ -1,16 +1,28 @@
 ---
 layout: post
-title: Jekyll个人博客添利用gitalk加评论功能
+title: Jekyll个人博客利用gitalk增加评论功能
 tags: [Jekyll, gitalk]
 categories: Jekyll
 ---
 
 博客评论功能也是必不可少的一部分。评论不仅能够让阅读者进行评价和提问，作者也可以通过评论功能来进行回复。加入评论功能，对博客的用户体验的整体水平都有很大的提升。作为博客的拥有者，喜欢捣鼓，喜欢折腾，所以不能让自己的博客缺胳膊少腿的，立刻来实现评论功能吧。
 
-上网查询了一下，自己总结就是，去使用**[gitalk](https://github.com/gitalk/gitalk)** 或者 **[gitmen](https://github.com/imsun/gitment)**这两个开源库吧。 这里我推荐选择**gitalk**，这个博客也是使用的gitalk来实现评论功能的。下面来看看如何利用gitalk来实现评论功能吧。
+上网查询了一下，自己总结就是，去使用**[gitalk](https://github.com/gitalk/gitalk)** 或者 **[gitment](https://github.com/imsun/gitment)**这两个开源库吧。 这里我推荐选择**gitalk**，这个博客也是使用的gitalk来实现评论功能的。下面来看看如何利用gitalk来实现评论功能吧。
 
 
-# 在github中创建授权
+<!-- TOC -->
+
+- [1. 在github中创建授权](#1-%e5%9c%a8github%e4%b8%ad%e5%88%9b%e5%bb%ba%e6%8e%88%e6%9d%83)
+- [2. 修改post.html文件](#2-%e4%bf%ae%e6%94%b9posthtml%e6%96%87%e4%bb%b6)
+- [3. 添加md5的js文件](#3-%e6%b7%bb%e5%8a%a0md5%e7%9a%84js%e6%96%87%e4%bb%b6)
+  - [3.1. 为什么要用到md5？](#31-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e5%88%b0md5)
+  - [3.2. 添加md5文件](#32-%e6%b7%bb%e5%8a%a0md5%e6%96%87%e4%bb%b6)
+- [4. 效果展示](#4-%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba)
+
+<!-- /TOC -->
+
+
+# 1. 在github中创建授权
 
 打开自己的github主页，点击右上角的图片，然后点击Settings，然后选择Developer Settings，然后选择OAuth Apps，来创建一个New OAuth App。按照自己的情况，对着如下图所示的例子来进行对应的修改。这主要的是**Callback回调**要填对自己的地址。
 
@@ -18,7 +30,7 @@ categories: Jekyll
 
 创建之后就会生成一个**clientID**和**clientSecret**，下面会用到，然后直接复制进行填写。
 
-# 修改post.html文件
+# 2. 修改post.html文件
 
 因为评论都是放在文章的末尾，所以我也就在末尾添加评论功能了。
 
@@ -174,15 +186,15 @@ layout: base
  {% endraw %}
 ```
 
-# 添加md5的js文件
+# 3. 添加md5的js文件
 
-## 为什么要用到md5？
+## 3.1. 为什么要用到md5？
 
 可以看到在id的部分利用了md5，这里为什么要用到md5呢？
 
 **其实，在本人实践的时候，发现当博客名称稍微长一点的时候，评论就会加载不出来，所以这里就用到md5来重新编码一下**。这样就不会出现评论加载不出来的问题了。
 
-## 添加md5文件
+## 3.2. 添加md5文件
 
 在`/js/`目录下创建一个名称为`md5.min.js`的文件，然后将下面的代码复制到该文件中。
 
@@ -191,11 +203,11 @@ layout: base
 //# sourceMappingURL=md5.min.js.map
 ```
 
-# 效果展示
+# 4. 效果展示
 
 进过上面的一系类操作之后，评论功能基本上也就可以用起来了。效果如下
 
-![](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/comments1.png?raw=true){: .center-block :}
+![](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/comment2.png?raw=true){: .center-block :}
 
 
 **如需转载，请附上链接: https://zoharandroid.github.io/ 。**
