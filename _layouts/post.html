@@ -35,6 +35,7 @@ layout: base
         {{ content }}
       </article>
 
+	  <!--文章尾部添加tags-->
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           Tags:
@@ -48,10 +49,28 @@ layout: base
         </div>
       {% endif %}
 
+	<!--添加分类-->
+	 {% if post.categories.size > 0 }
+		  <div class="post-categories">
+		  Category：
+		{% if post %}
+			{% assign categories = post.categories %}
+		{% else %}
+			{% assign categories = page.categories %}
+		{% endif %}
+		{% for category in categories %}
+			<a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+			{% unless forloop.last %}&nbsp;{% endunless %}
+			{% endfor %}
+		</div>
+	{ %endif %}
+
+	  <!--文章尾部的社交平台分享-->
       {% if page.social-share %}
         {% include social-share.html %}
       {% endif %}
 
+	<!--下一页和上一页-->
       <ul class="pager blog-pager">
         {% if page.previous.url %}
         <li class="previous">
@@ -65,18 +84,7 @@ layout: base
         {% endif %}
       </ul>
 	  
-	  <div class="post-categories">
-		{% if post %}
-    {% assign categories = post.categories %}
-  {% else %}
-    {% assign categories = page.categories %}
-  {% endif %}
-  {% for category in categories %}
-  <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-  {% unless forloop.last %}&nbsp;{% endunless %}
-  {% endfor %}
-</div>
-
+	  <!--文章尾部的评论部分-->
       {% if page.comments %}
         <div class="disqus-comments">
           {% include disqus.html %}
