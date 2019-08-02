@@ -162,7 +162,7 @@ timezone: "Asia/China"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 6
+paginate: 5
 
 kramdown:
   input: GFM
