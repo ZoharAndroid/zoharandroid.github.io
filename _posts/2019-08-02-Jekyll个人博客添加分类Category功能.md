@@ -60,7 +60,7 @@ title: 博客分类
 <ul id="results-container"></ul>
 
 <!-- script pointing to jekyll-search.js -->
-<script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+<script src="\{\{ site.baseurl \}\}/js/simple-jekyll-search.min.js"></script>
 
 <script>
 SimpleJekyllSearch({
@@ -77,21 +77,21 @@ SimpleJekyllSearch({
 
 
 <div id="archives">
-{% for category in site.categories %}
+{\%\for category in site.categories \%\}
   <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
+    {\%\capture category_name \%\}\{\{ category | first \}\}{\%\endcapture \%\}
+    <div id="#\{\{ category_name | slugize \}\}"></div>
     <p></p>
 
-    <h3 class="category-head">{{ category_name }} ({{site.categories[category_name].size()}})</h3>
-    <a name="{{ category_name | slugize }}"></a>
-    {% for post in site.categories[category_name] %}
+    <h3 class="category-head">\{\{ category_name \}\} (\{\{site.categories[category_name].size()\}\})</h3>
+    <a name="\{\{ category_name | slugize \}\}"></a>
+    {\%\for post in site.categories[category_name] \%\}
     <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+      <h4><a href="\{\{ site.baseurl \}\}\{\{ post.url \}\}">\{\{ post.title \}\}</a></h4>
     </article>
-    {% endfor %}
+    {\%\endfor \%\}
   </div>
-{% endfor %}
+{\%\endfor \%\}
 </div>
 ```
 > 这里我也添加了搜索功能，如果不想要的可以删除搜索的代码。
@@ -124,34 +124,34 @@ categories: Jekyll
 
 ```html
  <!--文章尾部添加tags-->
-      {% if page.tags.size > 0 %}
+      {\%\if page.tags.size > 0 \%\}
         <div class="blog-tags">
           Tags:
-          {% if site.link-tags %}
-          {% for tag in page.tags %}
-            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
-          {% endfor %}
-          {% else %}
-            {{ page.tags | join: ", " }}
-          {% endif %}
+          {\%\if site.link-tags \%\}
+          {\%\for tag in page.tags \%\}
+            <a href="\{\{ '/tags' | relative_url \}\}#\{\{- tag -\}\}">\{\{- tag -\}\}</a>
+          {\%\endfor \%\}
+          {\%\else \%\}
+            \{\{ page.tags | join: ", " \}\}
+          {\%\endif \%\}
         </div>
-      {% endif %}
+      {\%\endif \%\}
 
 	<!--添加分类-->
-	 {% if page.categories.size > 0 %}
+	 {\%\if page.categories.size > 0 \%\}
 		  <div class="blog-tags">
 		  Category：
-		{% if post %}
-			{% assign categories = post.categories %}
-		{% else %}
-			{% assign categories = page.categories %}
-		{% endif %}
-		{% for category in categories %}
-			<a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-			{% unless forloop.last %}&nbsp;{% endunless %}
-			{% endfor %}
+		{\%\if post \%\}
+			{\%\assign categories = post.categories \%\}
+		{\%\else \%\}
+			{\%\assign categories = page.categories \%\}
+		{\%\endif \%\}
+		{\%\for category in categories \%\}
+			<a href="\{\{site.baseurl\}\}/categories/#\{\{category|slugize\}\}">\{\{category\}\}</a>
+			{\%\unless forloop.last \%\}&nbsp;{\%\endunless \%\}
+			{\%\endfor \%\}
 		</div>
-	{% endif %}
+	{\%\endif \%\}
 ```
 
 ## 效果展示
