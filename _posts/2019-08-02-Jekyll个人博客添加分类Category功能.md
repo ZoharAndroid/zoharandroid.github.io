@@ -108,7 +108,7 @@ categories: Jekyll
 
 ## 修改post.html文件
 
-打开`_layout/post.html`文件，然后在中间部分找到**tags**的字符，然后在{% endif %}后面一行添加代码，添加完后的代码如下：
+打开`_layout/post.html`文件，然后在中间部分找到**tags**的字符，然后在`\{\% endif \%\}`后面一行添加代码，添加完后的代码如下：
 
 ```html
  <!--文章尾部添加tags-->
