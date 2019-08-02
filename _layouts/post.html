@@ -102,6 +102,7 @@ layout: base
 	  <div id="gitalk-container"></div>
 	   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 	   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	   <script src="{{ site.baseurl }}/js/md5.min.js"></script>
 	  <script>
 		   var gitalk = new Gitalk({
 			  clientID: '50003e555343e1cf48c3',
@@ -109,7 +110,7 @@ layout: base
 			  repo: 'zoharandroid.github.io',
 			  owner: 'ZoharAndroid',
 			  admin: ['ZoharAndroid'],
-			  id:  md5(decodeURI(window.location.pathname)),      // Ensure uniqueness and length less than 50
+			  id:  md5(location.href),      // Ensure uniqueness and length less than 50
 			  distractionFreeMode: true  // Facebook-like distraction free mode
 			})
 
