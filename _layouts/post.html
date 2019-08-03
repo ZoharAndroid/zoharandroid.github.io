@@ -74,14 +74,12 @@ layout: base
       <ul class="pager blog-pager">
         {% if page.previous.url %}
         <li class="previous">
-          <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; 上一页</a>
-		 {{ page.previous.title }}
+          <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; 上一页({{ page.previous.title }})</a>
 		</li>
         {% endif %}
         {% if page.next.url %}
         <li class="next">
-          <a href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">下一页 &rarr;  </a>
-		  {{ page.next.title }}
+          <a href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">({{ page.next.title }})下一页 &rarr;  </a>
         </li>
         {% endif %}
       </ul>
