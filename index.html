@@ -19,7 +19,10 @@ use-site-title: true
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+      {{ post.date | date: "%Y-%m-%d, %A  " }}
+	  <span id="busuanzi_container_page_pv">
+			阅读量<span id="busuanzi_value_page_pv"></span>次
+	  </span>
     </p>
 
     <div class="post-entry-container">
@@ -34,7 +37,7 @@ use-site-title: true
         {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
         {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
+          <a href="{{ post.url | relative_url }}" class="post-read-more">[阅读更多]</a>
         {% endif %}
       </div>
     </div>
@@ -58,11 +61,19 @@ use-site-title: true
 
 {% if paginator.total_pages > 1 %}
 <ul class="pager main-pager">
+	<!--显示上一页-->
   {% if paginator.previous_page %}
   <li class="previous">
     <a href="{{ paginator.previous_page_path | relative_url }}">&larr; 上一页</a>
   </li>
   {% endif %}
+  
+  <!--显示当前页-->
+  <p align="center">
+	第 {{ paginator.page }}页
+  </p>
+  
+  <!--显示下一页-->
   {% if paginator.next_page %}
   <li class="next">
     <a href="{{ paginator.next_page_path | relative_url }}">下一页 &rarr;</a>
