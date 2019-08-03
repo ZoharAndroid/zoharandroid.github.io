@@ -75,13 +75,13 @@ layout: base
         {% if page.previous.url %}
         <li class="previous">
           <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; 上一页</a>
-		 {{page.previous.title}}
+		 {{ page.previous.title }}
 		</li>
         {% endif %}
         {% if page.next.url %}
         <li class="next">
           <a href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">下一页 &rarr;  </a>
-		  {{page.next.title}}
+		  {{ page.next.title }}
         </li>
         {% endif %}
       </ul>
