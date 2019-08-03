@@ -159,4 +159,4 @@ categories: Jekyll
 ![](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/%E5%88%86%E7%B1%BB%E5%B0%BE%E9%83%A8.png?raw=true)
 
 
-如需转载，请附上本文的链接或者https://zoharandroid.github.io/ 。
+**如需转载，请附上链接：https://zoharandroid.github.io/ 。**
