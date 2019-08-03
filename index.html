@@ -20,9 +20,6 @@ use-site-title: true
 
     <p class="post-meta">
       {{ post.date | date: "%Y-%m-%d, %A  " }}
-	  <span id="busuanzi_container_page_pv">
-			阅读量<span id="busuanzi_value_page_pv"></span>次
-	  </span>
     </p>
 
     <div class="post-entry-container">
@@ -69,9 +66,11 @@ use-site-title: true
   {% endif %}
   
   <!--显示当前页-->
-  <p align="center">
-	第 {{ paginator.page }}页
-  </p>
+  <li>
+	<p align="center">
+		第 {{ paginator.page }}页
+	</p>
+  </li>
   
   <!--显示下一页-->
   {% if paginator.next_page %}
