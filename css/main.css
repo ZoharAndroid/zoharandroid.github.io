@@ -789,9 +789,8 @@ pre {
 
 /*  Back Top Button  */
 #back-top {
-  position: fixed;
-  bottom: 30px;
-  margin-right: 500px;
+  margin: 0px;
+  background-position:bottom right;
   background-color: #aaa;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
