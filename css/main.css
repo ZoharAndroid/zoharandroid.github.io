@@ -798,7 +798,7 @@ pre {
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
   transition: 0.7s;
- 
+  behavior: url(/css/PIE.htc);
 }
 #back-top:hover {
   background-color: #777;
