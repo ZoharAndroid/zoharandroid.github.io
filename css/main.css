@@ -786,3 +786,28 @@ pre {
   font-style: italic;
   font-size: 16px;
 }
+
+/*  Back Top Button  */
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  margin-left: 1040px;
+  background-color: #aaa;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  transition: 0.7s;
+  behavior: url(/css/PIE.htc);
+}
+#back-top:hover {
+  background-color: #777;
+}
+#back-top a {
+  background: #ddd url(/img/bg_up_arrow.png) no-repeat center center;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 14px;
+  display: inline-block;
+}
