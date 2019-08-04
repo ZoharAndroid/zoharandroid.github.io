@@ -21,12 +21,16 @@ description: Android开发者|努力编程的羊
 # List of links in the navigation bar
 navbar-links:
   主页: "https://zoharandroid.github.io"
-  分类: "https://zoharandroid.github.io/categories/"
-  标签: "https://zoharandroid.github.io/tags/"
+  博客: 
+   - 分类: "https://zoharandroid.github.io/categories/"
+   - 标签: "https://zoharandroid.github.io/tags/"
   项目:
-    - Learn markdown: "http://www.markdowntutorial.com/"
+    - GitHub: "https://github.com/ZoharAndroid"
+    - HelloOffer: "https://github.com/ZoharAndroid/HelloOffer"
+    - LeetCode: "https://github.com/ZoharAndroid/LeetCode"
   关于我: "aboutme"
   搜索: "search"
+  
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
