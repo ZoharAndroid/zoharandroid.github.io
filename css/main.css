@@ -789,7 +789,6 @@ pre {
 
 /*  Back Top Button  */
 #back-top {
-  margin: 0px;
   background-position:bottom right;
   background-color: #aaa;
   -webkit-border-radius: 7px;
@@ -804,6 +803,9 @@ pre {
   background-color: #777;
 }
 #back-top a {
+  background-position:bottom right;
+  width: 54px;
+  height: 54px;
   background: #ddd url(/img/bg_up_arrow.png) no-repeat center center;
   color: #fff;
   text-decoration: none;
