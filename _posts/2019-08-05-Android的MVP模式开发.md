@@ -52,8 +52,9 @@ MVP模式就是就是**Model View Presenter**的简称。它们各自的功能�
 
 先来看看登录界面的效果.如果想自己写界面，那么就不用看我写的登录界面的代码了。
 
-![login](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/login.png?raw=true)
-
+<p align = "center">
+<img src = "https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/login.png?raw=true" width = "250px" />
+</p>
 下面是登录的布局文件:
 
 activity_login.xml
@@ -600,8 +601,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
 到此，代码也就完成了，逻辑还是很清楚的。下面来看下效果。
 
-![loginmvp](https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/loginmvp.gif?raw=true)
-
+<p align = "center">
+<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/loginmvp.gif?raw=true" width = 250px"/>
+</p>
 # 3. 后续
 
 其实，整个代码还没有完，还是有问题存在的。比如，用户点击退出应用，本应该Activity都应该被回收的，但是由于都解耦了，可能Presenter还存在View的引用，那么虚拟机对Activity回收不了，随着操作这次的增多，对来越多的Activity被创建，然后又不能被虚拟机回收，所以也就容易造成内存泄露的问题，那么该如何处理呢，下面等后续分解吧！(*^__^*) 嘻嘻
