@@ -46,6 +46,8 @@ MVP模式就是就是**Model View Presenter**的简称。它们各自的功能�
 
 # 2. MVP模式的一个例子：登录
 
+参考链接：https://blog.csdn.net/lmj623565791/article/details/46596109 。
+
 首先我们从界面出发，把界面编写完了，然后一步一步的把思路理清楚，看如何利用MVP模式来实现这个登录的操作。
 
 ## 2.1. 登录界面
@@ -602,7 +604,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 到此，代码也就完成了，逻辑还是很清楚的。下面来看下效果。
 
 <p align = "center">
-<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/loginmvp.gif?raw=true" width = 250px"/>
+<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-08/loginmvp.gif?raw=true" width = "250px"/>
 </p>
 # 3. 后续
 
