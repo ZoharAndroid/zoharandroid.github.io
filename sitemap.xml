@@ -7,151 +7,146 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
- {% for page in site.pages %}
-    <url>
-        <loc>{{page.url}}</loc>
-        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    {% endfor %}
-
-    {% for post in site.posts %}
-    <url>
-        <loc>{{post.url}}</loc>
-        <lastmod>{{site.time | date: '%Y-%m-%d' }}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    {% endfor %}
-
-<!--
 <url>
   <loc>https://zoharandroid.github.io/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/categories/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/tags/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/aboutme/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/search/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-13-zxing%E5%AE%9E%E7%8E%B0%E7%AB%96%E5%B1%8F%E6%89%AB%E4%BA%8C%E7%BB%B4%E7%A0%81/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-12-%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E5%AF%BC%E5%85%A5Zxing%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E7%A0%81%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-05-Android%E7%9A%84MVP%E6%A8%A1%E5%BC%8F%E5%BC%80%E5%8F%91/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-04-Jekyll%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%8C%89%E9%92%AE/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-03-%E8%AE%A9%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://zoharandroid.github.io/2019-08-03-%E6%A0%91%E8%8E%93%E6%B4%BE3BGPIO%E6%93%8D%E4%BD%9C-%E7%82%B9%E4%BA%AELED/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://zoharandroid.github.io/2019-08-03-%E6%A0%91%E8%8E%93%E6%B4%BE3BGPIO%E6%93%8D%E4%BD%9C-LED%E6%B5%81%E6%B0%B4%E7%81%AF/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://zoharandroid.github.io/2019-08-03-MD%E4%B8%AD%E4%BB%A3%E7%A0%81%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/page2/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2015-02-26-flake-it-till-you-make-it/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-03-MD%E4%B8%AD%E4%BB%A3%E7%A0%81%E9%98%B2%E6%AD%A2%E8%A2%AB%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2015-02-28-test-markdown/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-01-10-%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-01-21-%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84-%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E4%B8%8E%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-02-12-MySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-03-21-pro-git-%E7%AC%AC2%E7%89%88-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-07-31-NDN-Lite-BLE%E6%93%8D%E4%BD%9C%E5%8F%82%E8%80%83%E6%8C%87%E5%8D%97/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-02-Jekyll%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%E5%92%8C%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-02-Jekyll%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BBCategory%E5%8A%9F%E8%83%BD/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-02-Jekyll%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%88%A9%E7%94%A8gitalk%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-01-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A0%87%E7%AD%BE%E6%98%BE%E7%A4%BA%E7%BD%91%E7%AB%99%E5%B0%8F%E5%9B%BE%E6%A0%87%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/2019-08-01-jekyll%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-03-%E6%A0%91%E8%8E%93%E6%B4%BE3BGPIO%E6%93%8D%E4%BD%9C-%E7%82%B9%E4%BA%AELED/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zoharandroid.github.io/2019-08-03-%E6%A0%91%E8%8E%93%E6%B4%BE3BGPIO%E6%93%8D%E4%BD%9C-LED%E6%B5%81%E6%B0%B4%E7%81%AF/</loc>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/page3/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://zoharandroid.github.io/page4/</loc>
-  <lastmod>2019-08-04T08:28:14+00:00</lastmod>
+  <lastmod>2019-08-25T07:12:14+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 
--->
 
 </urlset>
