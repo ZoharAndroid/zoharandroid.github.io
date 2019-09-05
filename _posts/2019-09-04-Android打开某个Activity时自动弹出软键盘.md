@@ -9,6 +9,14 @@ categories: Android
 
 当前需求是：进入搜索界面，EditText能够直接获取焦点，然后打开软键盘，提升用户体验。但是，尝试过多种方法方法去打开软键盘，比如说：修改Menifest中的属性、通过InputMethodManager去直接打开软键盘等方法，发现都无法打开软键盘。下面我通过如下方法来打开软键盘。
 
+<!-- TOC -->
+
+- [Keyborad工具类](#keyborad%e5%b7%a5%e5%85%b7%e7%b1%bb)
+- [EditText的处理](#edittext%e7%9a%84%e5%a4%84%e7%90%86)
+- [效果图](#%e6%95%88%e6%9e%9c%e5%9b%be)
+
+<!-- /TOC -->
+
 ## Keyborad工具类
 
 通过这个工具类，一般情况下是可以调用这个工具类的方法来直接打开或者关闭软键盘。
@@ -86,5 +94,5 @@ public class KeyboardUtils {
 
 ## 效果图
 
-<img src = "https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-09/search.gif?raw=true" width = 300px height = 500px>
+<img src="https://github.com/ZoharAndroid/MarkdownImages/blob/master/2019-09/search.gif?raw=true" width="300px" height="500px"/>
 
