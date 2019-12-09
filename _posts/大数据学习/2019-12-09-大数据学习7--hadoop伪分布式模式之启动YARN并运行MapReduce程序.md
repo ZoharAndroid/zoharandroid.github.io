@@ -8,7 +8,22 @@ categories: 大数据
 
 下面来学习一下hadoop伪分布式模式的另外一种，利用yarn并运行mapreduce程序。
 
-# 配置yarn-env.sh
+<!-- TOC -->
+
+- [1. 配置yarn-env.sh](#1-配置yarn-envsh)
+- [2. 配置yarn-site.xml](#2-配置yarn-sitexml)
+- [3. 配置mapred-env.sh](#3-配置mapred-envsh)
+- [4. 重命名mapred-site.xml.template为mapred-site.xml](#4-重命名mapred-sitexmltemplate为mapred-sitexml)
+- [5. 配置mapred-site.xml](#5-配置mapred-sitexml)
+- [6. 配置yarn-site.xml](#6-配置yarn-sitexml)
+- [7. 启动resourcemanager和nodemanager](#7-启动resourcemanager和nodemanager)
+- [8. 浏览器查看](#8-浏览器查看)
+- [9. 上传本地文件夹到更目录](#9-上传本地文件夹到更目录)
+- [10. 执行mapreduce程序](#10-执行mapreduce程序)
+
+<!-- /TOC -->
+
+# 1. 配置yarn-env.sh
 
 配置JAVA_HOME.
 
@@ -21,7 +36,7 @@ categories: 大数据
 export JAVA_HOME=/opt/module/jdk1.8.0_161
 ```
 
-# 配置yarn-site.xml
+# 2. 配置yarn-site.xml
 
 ```
 [root@hadoop100 hadoop-2.10.0]# vim etc/hadoop/yarn-site.xml 
@@ -47,7 +62,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 </configuration>
 ```
 
-# 配置mapred-env.sh
+# 3. 配置mapred-env.sh
 
 ```
 [root@hadoop100 hadoop-2.10.0]# vim etc/hadoop/mapred-env.sh 
@@ -58,13 +73,13 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 export JAVA_HOME=/opt/module/jdk1.8.0_161
 ```
 
-# 重命名mapred-site.xml.template为mapred-site.xml
+# 4. 重命名mapred-site.xml.template为mapred-site.xml
 
 ```
 [root@hadoop100 hadoop-2.10.0]# cp etc/hadoop/mapred-site.xml.template etc/hadoop/mapred-site.xml
 ```
 
-# 配置mapred-site.xml
+# 5. 配置mapred-site.xml
 
 ```
 <configuration>
@@ -77,7 +92,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 </configuration>
 ```
 
-# 配置yarn-site.xml
+# 6. 配置yarn-site.xml
 
 ```
 [root@hadoop100 hadoop-2.10.0]# vim etc/hadoop/yarn-site.xml
@@ -102,7 +117,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 </configuration>
 ```
 
-# 启动resourcemanager和nodemanager
+# 7. 启动resourcemanager和nodemanager
 
 > 在启动之前先用jps命令看看namenode和datanode是否都启动了。如何没有启动，先启动，具体操作看上一篇博客。
 
@@ -114,7 +129,7 @@ starting resourcemanager, logging to /opt/module/hadoop-2.10.0/logs/yarn-root-re
 starting nodemanager, logging to /opt/module/hadoop-2.10.0/logs/yarn-root-nodemanager-hadoop100.out
 ```
 
-# 浏览器查看
+# 8. 浏览器查看
 
 在浏览器中输入：`http://192.168.1.100:8088/` 即可查看到hadoop的应用。
 
@@ -129,7 +144,7 @@ starting nodemanager, logging to /opt/module/hadoop-2.10.0/logs/yarn-root-nodema
 4989 NodeManager
 ```
 
-# 上传本地文件夹到更目录
+# 9. 上传本地文件夹到更目录
 
 ```
 [root@hadoop100 hadoop-2.10.0]# hadoop fs -put wcinput /
@@ -139,7 +154,7 @@ starting nodemanager, logging to /opt/module/hadoop-2.10.0/logs/yarn-root-nodema
 打开浏览器看看是否上传成功了。
 http://192.168.1.100:50070/explorer.html#/
 
-# 执行mapreduce程序
+# 10. 执行mapreduce程序
 
 ```
 [root@hadoop100 hadoop-2.10.0]# hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.10.0.jar wordcount /wcinput /wcoutput
