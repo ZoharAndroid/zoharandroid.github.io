@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 大数据学习7--hadoop伪分布式模式
+title: 大数据学习7--hadoop伪分布式模式2
 subtitle: 启动YARN并运行MapReduce程序
 args: [大数据]
 categories: 大数据
