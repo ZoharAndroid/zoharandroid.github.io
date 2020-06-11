@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2019-12-09-大数据学习7--hadoop伪分布式模式
+title: 大数据学习7--hadoop伪分布式模式
 subtitle: 启动YARN并运行MapReduce程序
 args: [大数据]
 categories: 大数据
@@ -10,16 +10,16 @@ categories: 大数据
 
 <!-- TOC -->
 
-- [1. 配置yarn-env.sh](#1-配置yarn-envsh)
-- [2. 配置yarn-site.xml](#2-配置yarn-sitexml)
-- [3. 配置mapred-env.sh](#3-配置mapred-envsh)
-- [4. 重命名mapred-site.xml.template为mapred-site.xml](#4-重命名mapred-sitexmltemplate为mapred-sitexml)
-- [5. 配置mapred-site.xml](#5-配置mapred-sitexml)
-- [6. 配置yarn-site.xml](#6-配置yarn-sitexml)
-- [7. 启动resourcemanager和nodemanager](#7-启动resourcemanager和nodemanager)
-- [8. 浏览器查看](#8-浏览器查看)
-- [9. 上传本地文件夹到更目录](#9-上传本地文件夹到更目录)
-- [10. 执行mapreduce程序](#10-执行mapreduce程序)
+- [1. 配置yarn-env.sh](#1-%e9%85%8d%e7%bd%aeyarn-envsh)
+- [2. 配置yarn-site.xml](#2-%e9%85%8d%e7%bd%aeyarn-sitexml)
+- [3. 配置mapred-env.sh](#3-%e9%85%8d%e7%bd%aemapred-envsh)
+- [4. 重命名mapred-site.xml.template为mapred-site.xml](#4-%e9%87%8d%e5%91%bd%e5%90%8dmapred-sitexmltemplate%e4%b8%bamapred-sitexml)
+- [5. 配置mapred-site.xml](#5-%e9%85%8d%e7%bd%aemapred-sitexml)
+- [6. 配置yarn-site.xml](#6-%e9%85%8d%e7%bd%aeyarn-sitexml)
+- [7. 启动resourcemanager和nodemanager](#7-%e5%90%af%e5%8a%a8resourcemanager%e5%92%8cnodemanager)
+- [8. 浏览器查看](#8-%e6%b5%8f%e8%a7%88%e5%99%a8%e6%9f%a5%e7%9c%8b)
+- [9. 上传本地文件夹到更目录](#9-%e4%b8%8a%e4%bc%a0%e6%9c%ac%e5%9c%b0%e6%96%87%e4%bb%b6%e5%a4%b9%e5%88%b0%e6%9b%b4%e7%9b%ae%e5%bd%95)
+- [10. 执行mapreduce程序](#10-%e6%89%a7%e8%a1%8cmapreduce%e7%a8%8b%e5%ba%8f)
 
 <!-- /TOC -->
 
