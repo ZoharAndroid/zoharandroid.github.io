@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 大数据学习6--hadoop伪分布式模式
+title: 大数据学习6--hadoop伪分布式模式1
 subtitle: 启动HDFS并运行MapReduce程序
 tags: [大数据]
 categories: 大数据
