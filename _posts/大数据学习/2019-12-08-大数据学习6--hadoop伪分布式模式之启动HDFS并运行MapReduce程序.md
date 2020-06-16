@@ -10,23 +10,24 @@ categories: 大数据
 
 <!-- TOC -->
 
-- [1. 修改hadoop-env.sh文件](#1-%e4%bf%ae%e6%94%b9hadoop-envsh%e6%96%87%e4%bb%b6)
-- [2. 配置core-site.xml](#2-%e9%85%8d%e7%bd%aecore-sitexml)
-- [3. 配置hdfs-site.xml](#3-%e9%85%8d%e7%bd%aehdfs-sitexml)
-- [4. 格式化namenode](#4-%e6%a0%bc%e5%bc%8f%e5%8c%96namenode)
-- [5. 启动namenode](#5-%e5%90%af%e5%8a%a8namenode)
-- [6. 启动datanode](#6-%e5%90%af%e5%8a%a8datanode)
-- [7. 查看集群](#7-%e6%9f%a5%e7%9c%8b%e9%9b%86%e7%be%a4)
-- [8. 查看日志](#8-%e6%9f%a5%e7%9c%8b%e6%97%a5%e5%bf%97)
-- [9. Web端查看HDFS文件系统](#9-web%e7%ab%af%e6%9f%a5%e7%9c%8bhdfs%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f)
-- [10. 操作集群](#10-%e6%93%8d%e4%bd%9c%e9%9b%86%e7%be%a4)
-  - [10.1. 在HDFS上创建一个input文件夹](#101-%e5%9c%a8hdfs%e4%b8%8a%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aainput%e6%96%87%e4%bb%b6%e5%a4%b9)
-  - [10.2. 把测试文件上传到文件系统上](#102-%e6%8a%8a%e6%b5%8b%e8%af%95%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0%e5%88%b0%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e4%b8%8a)
-  - [10.3. 查看上传的文件](#103-%e6%9f%a5%e7%9c%8b%e4%b8%8a%e4%bc%a0%e7%9a%84%e6%96%87%e4%bb%b6)
-  - [10.4. 运行mapreduce程序](#104-%e8%bf%90%e8%a1%8cmapreduce%e7%a8%8b%e5%ba%8f)
-  - [10.5. 查看输出的结果](#105-%e6%9f%a5%e7%9c%8b%e8%be%93%e5%87%ba%e7%9a%84%e7%bb%93%e6%9e%9c)
-  - [10.6. 将测试文件下载到本地](#106-%e5%b0%86%e6%b5%8b%e8%af%95%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e5%88%b0%e6%9c%ac%e5%9c%b0)
-  - [10.7. 删除输出结果](#107-%e5%88%a0%e9%99%a4%e8%be%93%e5%87%ba%e7%bb%93%e6%9e%9c)
+- [1. 修改hadoop-env.sh文件](#1-修改hadoop-envsh文件)
+- [2. 配置core-site.xml](#2-配置core-sitexml)
+- [3. 配置hdfs-site.xml](#3-配置hdfs-sitexml)
+- [4. 格式化namenode](#4-格式化namenode)
+- [5. 启动namenode](#5-启动namenode)
+- [6. 启动datanode](#6-启动datanode)
+- [7. 查看集群](#7-查看集群)
+- [8. 查看日志](#8-查看日志)
+- [9. Web端查看HDFS文件系统](#9-web端查看hdfs文件系统)
+- [10. 思考：为什么不能一直格式化NameNode，格式化NameNode需要注意什么？](#10-思考为什么不能一直格式化namenode格式化namenode需要注意什么)
+- [11. 操作集群](#11-操作集群)
+  - [11.1. 在HDFS上创建一个input文件夹](#111-在hdfs上创建一个input文件夹)
+  - [11.2. 把测试文件上传到文件系统上](#112-把测试文件上传到文件系统上)
+  - [11.3. 查看上传的文件](#113-查看上传的文件)
+  - [11.4. 运行mapreduce程序](#114-运行mapreduce程序)
+  - [11.5. 查看输出的结果](#115-查看输出的结果)
+  - [11.6. 将测试文件下载到本地](#116-将测试文件下载到本地)
+  - [11.7. 删除输出结果](#117-删除输出结果)
 
 <!-- /TOC -->
 
@@ -38,7 +39,7 @@ categories: 大数据
 /opt/module/jdk1.8.0_161
 ```
 
-将jdk安装路径复制。修改`hadoop-env.sh`中的JAVA_HOME部分的内容。
+将jdk安装路径复制。修改`hadoop-env.sh`中的JAVA_HOME部分的内容。如果已经在环境变量里面配置过JAVA_HOME了，这一步可以省略。
 
 ```
 [root@hadoop100 ~]# cd /opt/module/
@@ -82,6 +83,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 ```
 <configuration>
         <property>
+                <!--指定HDFS副本的数量-->
                 <name>dfs.replication</name>
                 <value>1</value>
         </property>
@@ -99,12 +101,14 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 
 ```
 [root@hadoop100 hadoop-2.10.0]# sbin/hadoop-daemon.sh start namenode
+starting namenode, logging to /opt/module/hadoop-2.7.2/logs/hadoop-zohar-namenode-hadoop100.out
 ```
 
 # 6. 启动datanode
 
 ```
 [root@hadoop100 hadoop-2.10.0]# sbin/hadoop-daemon.sh start datanode
+starting datanode, logging to /opt/module/hadoop-2.7.2/logs/hadoop-zohar-datanode-hadoop100.out
 ```
 
 # 7. 查看集群
@@ -115,6 +119,8 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 3977 Jps
 3052 NameNode
 ```
+
+> jps是JDK的命令，如果不安装JDK是不能使用jps命名的，并不是Linux命名。
 
 # 8. 查看日志
 
@@ -139,9 +145,11 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 
 # 9. Web端查看HDFS文件系统
 
-打开浏览器输入：http://192.168.1.100:50070
+打开虚拟机中的浏览器并输入输入：http://192.168.1.100:50070
 
 即可查看HDFS的内容。
+
+![Web端查看](./picture/web端查看.jpg)
 
 > 注意：如果不能查看，请把防火墙关闭了。
 > 关闭防火墙操作:
@@ -150,46 +158,71 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 > chkconfig iptables off
 > ```
 
-# 10. 操作集群
+# 10. 思考：为什么不能一直格式化NameNode，格式化NameNode需要注意什么？
 
-## 10.1. 在HDFS上创建一个input文件夹
+查看`/opt/module/hadoop-2.7.2/data/tmp/dfs`目录（这个目录也就是在编辑`core-site.xml`指定的运行时产生的数据的存储目录）下生成的`name`和`data`目录，如下所示；
+
+```
+[zohar@hadoop100 hadoop-2.7.2]$ cd data/tmp/dfs/
+[zohar@hadoop100 dfs]$ cat name/current/VERSION 
+#Sun Jun 14 03:58:23 CST 2020
+namespaceID=1142092124
+clusterID=CID-65d0ae3d-dff4-4005-966f-df4d052e9f9a
+cTime=0
+storageType=NAME_NODE
+blockpoolID=BP-312741995-192.168.1.100-1592078303005
+layoutVersion=-63
+[zohar@hadoop100 dfs]$ cat data/current/VERSION 
+#Sun Jun 14 04:00:20 CST 2020
+storageID=DS-a90239a2-a29d-4395-bdba-a889d7206ef0
+clusterID=CID-65d0ae3d-dff4-4005-966f-df4d052e9f9a
+cTime=0
+datanodeUuid=6bc18248-ec2a-471b-a392-d4adb189c4da
+storageType=DATA_NODE
+layoutVersion=-56
+```
+
+有没有发现他们的集群号clusterID都是一样的。
+
+因此，格式化NameNode会产生新的集群ID，这样会导致NameNode和DataNode的集群ID不一致，集群找不到已往的数据，所以，格式NameNode时，一定要先删除data数据和log日志，然后在格式化NameNode。
+
+# 11. 操作集群
+
+## 11.1. 在HDFS上创建一个input文件夹
 
 ```
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -mkdir -p /user/zohar/input
-19/12/10 07:54:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 ```
 
-## 10.2. 把测试文件上传到文件系统上
+## 11.2. 把测试文件上传到文件系统上
 
+这里先切换到hadoop的根目录下，然后进行下面的操作。
 ```
-[root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -put wc.input /user/zohar/input/
-19/12/10 07:56:06 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -put wcinput/wc.input /user/zohar/input/
 ```
+> 这里把前面单机测试的wc.input文件上传到HDFS文件系统中的对应的目录下。wc.input文件也就是一些用户自己编写的字符串内容。
+> 
 
-## 10.3. 查看上传的文件
+## 11.3. 查看上传的文件
 
 ```
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -ls /user/zohar/input
-19/12/10 07:58:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Found 1 items
 -rw-r--r--   1 root supergroup         59 2019-12-10 07:56 /user/zohar/input/wc.input
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -cat /user/zohar/input/wc.input
-19/12/10 07:58:46 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 zhangzhihong hadoop helloworld zhangzhihong a this a haha 
-[root@hadoop100 hadoop-2.10.0]# 
 ```
 
-## 10.4. 运行mapreduce程序
+## 11.4. 运行mapreduce程序
 
 ```
 [root@hadoop100 hadoop-2.10.0]# bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.10.0.jar wordcount /user/zohar/input/ /user/zohar/output
 ```
+> 这里输入的命令和单机模式的意思也是一样的，运行wordcount的程序，只不过输入输出的文件都是对应在HDFS文件系统上，而不是本机上面的文件。这里`/user/zohar/input`和`/user/zohar/output`都是指定在HDFS文件系统之上的。
 
-## 10.5. 查看输出的结果
+## 11.5. 查看输出的结果
 
 ```
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -cat /user/zohar/output/*
-19/12/10 08:01:26 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 a	2
 hadoop	1
 haha	1
@@ -199,10 +232,11 @@ zhangzhihong	2
 [root@hadoop100 hadoop-2.10.0]# 
 ```
 
-通过浏览器也可以查看到:
+当然也可以通过虚拟机中的浏览器查看到:http://hadoop100:50070/
+
 ![][浏览器查看]
 
-## 10.6. 将测试文件下载到本地
+## 11.6. 将测试文件下载到本地
 
 ```
 [root@hadoop100 hadoop-2.10.0]# hadoop fs -get /user/zohar/output/part-r-00000 ./wcoutput/
@@ -217,13 +251,13 @@ zhangzhihong	2
 -rw-r--r--. 1 root root  0 12月  8 08:57 _SUCCESS
 ```
 
-## 10.7. 删除输出结果
+## 11.7. 删除输出结果
 
 ```
 [root@hadoop100 hadoop-2.10.0]# hdfs dfs -rm -r /user/zohar/output
-19/12/10 08:26:22 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Deleted /user/zohar/output
 ```
+
 刷新一下浏览器，就可以看到上图的显示的结果就不存在了。
 
 
