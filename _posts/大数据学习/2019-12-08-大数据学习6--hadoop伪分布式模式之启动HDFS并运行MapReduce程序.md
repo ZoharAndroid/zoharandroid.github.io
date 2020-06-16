@@ -162,9 +162,9 @@ starting datanode, logging to /opt/module/hadoop-2.7.2/logs/hadoop-zohar-datanod
 
 查看`/opt/module/hadoop-2.7.2/data/tmp/dfs`目录（这个目录也就是在编辑`core-site.xml`指定的运行时产生的数据的存储目录）下生成的`name`和`data`目录，如下所示；
 
-```
+```shell
 [zohar@hadoop100 hadoop-2.7.2]$ cd data/tmp/dfs/
-[zohar@hadoop100 dfs]$ cat name/current/VERSION 
+[zohar@hadoop100 dfs]$ cat name/current/VERSION
 #Sun Jun 14 03:58:23 CST 2020
 namespaceID=1142092124
 clusterID=CID-65d0ae3d-dff4-4005-966f-df4d052e9f9a
@@ -172,7 +172,7 @@ cTime=0
 storageType=NAME_NODE
 blockpoolID=BP-312741995-192.168.1.100-1592078303005
 layoutVersion=-63
-[zohar@hadoop100 dfs]$ cat data/current/VERSION 
+[zohar@hadoop100 dfs]$ cat data/current/VERSION
 #Sun Jun 14 04:00:20 CST 2020
 storageID=DS-a90239a2-a29d-4395-bdba-a889d7206ef0
 clusterID=CID-65d0ae3d-dff4-4005-966f-df4d052e9f9a
@@ -190,22 +190,23 @@ layoutVersion=-56
 
 ## 11.1. 在HDFS上创建一个input文件夹
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -mkdir -p /user/zohar/input
 ```
 
 ## 11.2. 把测试文件上传到文件系统上
 
 这里先切换到hadoop的根目录下，然后进行下面的操作。
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -put wcinput/wc.input /user/zohar/input/
 ```
+
 > 这里把前面单机测试的wc.input文件上传到HDFS文件系统中的对应的目录下。wc.input文件也就是一些用户自己编写的字符串内容。
-> 
+>
 
 ## 11.3. 查看上传的文件
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -ls /user/zohar/input
 -rw-r--r--   1 root supergroup         59 2019-12-10 07:56 /user/zohar/input/wc.input
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -cat /user/zohar/input/wc.input
@@ -214,14 +215,15 @@ zhangzhihong hadoop helloworld zhangzhihong a this a haha
 
 ## 11.4. 运行mapreduce程序
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.10.0.jar wordcount /user/zohar/input/ /user/zohar/output
 ```
+
 > 这里输入的命令和单机模式的意思也是一样的，运行wordcount的程序，只不过输入输出的文件都是对应在HDFS文件系统上，而不是本机上面的文件。这里`/user/zohar/input`和`/user/zohar/output`都是指定在HDFS文件系统之上的。
 
 ## 11.5. 查看输出的结果
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# bin/hdfs dfs -cat /user/zohar/output/*
 a	2
 hadoop	1
@@ -229,7 +231,6 @@ haha	1
 helloworld	1
 this	1
 zhangzhihong	2
-[root@hadoop100 hadoop-2.10.0]# 
 ```
 
 当然也可以通过虚拟机中的浏览器查看到:http://hadoop100:50070/
@@ -238,12 +239,13 @@ zhangzhihong	2
 
 ## 11.6. 将测试文件下载到本地
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# hadoop fs -get /user/zohar/output/part-r-00000 ./wcoutput/
 ```
 
 查看下载内容
-```
+
+```shell
 [root@hadoop100 hadoop-2.10.0]# cd wcoutput/
 [root@hadoop100 wcoutput]# ls -l
 总用量 4
@@ -253,7 +255,7 @@ zhangzhihong	2
 
 ## 11.7. 删除输出结果
 
-```
+```shell
 [root@hadoop100 hadoop-2.10.0]# hdfs dfs -rm -r /user/zohar/output
 Deleted /user/zohar/output
 ```
