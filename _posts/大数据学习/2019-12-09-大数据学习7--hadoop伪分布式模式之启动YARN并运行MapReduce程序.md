@@ -10,16 +10,15 @@ categories: 大数据
 
 <!-- TOC -->
 
-- [1. 配置yarn-env.sh](#1-%e9%85%8d%e7%bd%aeyarn-envsh)
-- [2. 配置yarn-site.xml](#2-%e9%85%8d%e7%bd%aeyarn-sitexml)
-- [3. 配置mapred-env.sh](#3-%e9%85%8d%e7%bd%aemapred-envsh)
-- [4. 重命名mapred-site.xml.template为mapred-site.xml](#4-%e9%87%8d%e5%91%bd%e5%90%8dmapred-sitexmltemplate%e4%b8%bamapred-sitexml)
-- [5. 配置mapred-site.xml](#5-%e9%85%8d%e7%bd%aemapred-sitexml)
-- [6. 配置yarn-site.xml](#6-%e9%85%8d%e7%bd%aeyarn-sitexml)
-- [7. 启动resourcemanager和nodemanager](#7-%e5%90%af%e5%8a%a8resourcemanager%e5%92%8cnodemanager)
-- [8. 浏览器查看](#8-%e6%b5%8f%e8%a7%88%e5%99%a8%e6%9f%a5%e7%9c%8b)
-- [9. 上传本地文件夹到更目录](#9-%e4%b8%8a%e4%bc%a0%e6%9c%ac%e5%9c%b0%e6%96%87%e4%bb%b6%e5%a4%b9%e5%88%b0%e6%9b%b4%e7%9b%ae%e5%bd%95)
-- [10. 执行mapreduce程序](#10-%e6%89%a7%e8%a1%8cmapreduce%e7%a8%8b%e5%ba%8f)
+- [1. 配置yarn-env.sh](#1-配置yarn-envsh)
+- [2. 配置yarn-site.xml](#2-配置yarn-sitexml)
+- [3. 配置mapred-env.sh](#3-配置mapred-envsh)
+- [4. 重命名mapred-site.xml.template为mapred-site.xml](#4-重命名mapred-sitexmltemplate为mapred-sitexml)
+- [5. 配置mapred-site.xml](#5-配置mapred-sitexml)
+- [7. 启动resourcemanager和nodemanager](#7-启动resourcemanager和nodemanager)
+- [8. 浏览器查看](#8-浏览器查看)
+- [删除HDFS文件系统上的output文件](#删除hdfs文件系统上的output文件)
+- [10. 执行mapreduce程序](#10-执行mapreduce程序)
 
 <!-- /TOC -->
 
@@ -76,7 +75,8 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 # 4. 重命名mapred-site.xml.template为mapred-site.xml
 
 ```
-[root@hadoop100 hadoop-2.10.0]# cp etc/hadoop/mapred-site.xml.template etc/hadoop/mapred-site.xml
+[root@hadoop100 hadoop-2.10.0]# mv
+ etc/hadoop/mapred-site.xml.template etc/hadoop/mapred-site.xml
 ```
 
 # 5. 配置mapred-site.xml
@@ -92,34 +92,9 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 </configuration>
 ```
 
-# 6. 配置yarn-site.xml
-
-```
-[root@hadoop100 hadoop-2.10.0]# vim etc/hadoop/yarn-site.xml
-```
-
-```
-<configuration>
-
-<!-- Site specific YARN configuration properties -->
-<!--reducer 获取数据的方式-->
-<property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-</property>
-
-<!--指定yarn的resourcemanager地址-->
-<property>
-        <name>yarn.resourcemanager.hostname</name>
-        <value>hadoop100</value>
-</property>
-
-</configuration>
-```
-
 # 7. 启动resourcemanager和nodemanager
 
-> 在启动之前先用jps命令看看namenode和datanode是否都启动了。如何没有启动，先启动，具体操作看上一篇博客。
+> 在启动之前先用jps命令看看namenode和datanode是否都启动了。如何没有启动，先启动，具体操作看上一篇博客[hadoop伪分布式模式之启动HDFS并运行MapReduce程序](./2019-12-08-大数据学习6--hadoop伪分布式模式之启动HDFS并运行MapReduce程序.md)。
 
 启动resourcemanager和nodemanager：
 ```
@@ -144,21 +119,35 @@ starting nodemanager, logging to /opt/module/hadoop-2.10.0/logs/yarn-root-nodema
 4989 NodeManager
 ```
 
-# 9. 上传本地文件夹到更目录
+# 删除HDFS文件系统上的output文件
+
+删除前面测试时在文件系统上产生的HDFS文件。
 
 ```
-[root@hadoop100 hadoop-2.10.0]# hadoop fs -put wcinput /
-19/12/10 14:07:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[zohar@hadoop100 hadoop-2.7.2]$ hdfs dfs -rm -R /user/zohar/output
 ```
-
-打开浏览器看看是否上传成功了。
-http://192.168.1.100:50070/explorer.html#/
 
 # 10. 执行mapreduce程序
 
 ```
-[root@hadoop100 hadoop-2.10.0]# hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.10.0.jar wordcount /wcinput /wcoutput
+[root@hadoop100 hadoop-2.10.0]# hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.10.0.jar wordcount   /user/zohar/input /user/zohar/output
 ```
+
+查看运行结果：
+```
+[zohar@hadoop100 hadoop-2.7.2]$ hdfs dfs -cat /user/zohar/output/*
+hadoop	2
+mapreduce	1
+yarn	1
+zhangzhihong	1
+zohar	1
+```
+> 这个例子的结果可能和前面博客所说的不一致，这个是后面更新的，不一致不重要，重要的是能够运行显示出结果。
+
+在虚拟机浏览器可以查看集群运行的内容：
+http://hadoop100:8088
+
+![](../大数据学习/picture/mapreduce运行结果.jpg)
 
 
 
