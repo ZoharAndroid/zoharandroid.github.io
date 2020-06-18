@@ -158,6 +158,8 @@ starting datanode, logging to /opt/module/hadoop-2.7.2/logs/hadoop-zohar-datanod
 > chkconfig iptables off
 > ```
 
+> 小提示：如果关闭虚拟机的防火墙，用windows的浏览器也是可以进行访问的。
+
 # 10. 思考：为什么不能一直格式化NameNode，格式化NameNode需要注意什么？
 
 查看`/opt/module/hadoop-2.7.2/data/tmp/dfs`目录（这个目录也就是在编辑`core-site.xml`指定的运行时产生的数据的存储目录）下生成的`name`和`data`目录，如下所示；
