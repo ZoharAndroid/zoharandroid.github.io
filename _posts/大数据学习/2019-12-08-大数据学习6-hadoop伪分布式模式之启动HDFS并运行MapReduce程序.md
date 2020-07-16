@@ -4,6 +4,7 @@ title: 大数据学习6--hadoop伪分布式模式1
 subtitle: 启动HDFS并运行MapReduce程序
 tags: [大数据]
 categories: 大数据
+typora-root-url: ..\..
 ---
 
 下面直接来一步一步如何进行启动HDFS并运行MapReduce程序的。
@@ -149,7 +150,7 @@ starting datanode, logging to /opt/module/hadoop-2.7.2/logs/hadoop-zohar-datanod
 
 即可查看HDFS的内容。
 
-![Web端查看](./picture/web端查看.jpg)
+![Web端查看](/picture/web端查看.jpg)
 
 > 注意：如果不能查看，请把防火墙关闭了。
 > 关闭防火墙操作:

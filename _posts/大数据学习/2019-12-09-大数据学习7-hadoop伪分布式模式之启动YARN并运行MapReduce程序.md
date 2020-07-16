@@ -94,7 +94,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_161
 
 # 7. 启动resourcemanager和nodemanager
 
-> 在启动之前先用jps命令看看namenode和datanode是否都启动了。如何没有启动，先启动，具体操作看上一篇博客[hadoop伪分布式模式之启动HDFS并运行MapReduce程序](./2019-12-08-大数据学习6--hadoop伪分布式模式之启动HDFS并运行MapReduce程序.md)。
+> 在启动之前先用jps命令看看namenode和datanode是否都启动了。如何没有启动，先启动，具体操作看上一篇博客[hadoop伪分布式模式之启动HDFS并运行MapReduce程序](/2019-12-08-大数据学习6--hadoop伪分布式模式之启动HDFS并运行MapReduce程序.md)。
 
 启动resourcemanager和nodemanager：
 ```
